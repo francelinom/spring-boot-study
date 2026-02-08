@@ -4,6 +4,7 @@ import br.com.francelino.model.Person;
 import br.com.francelino.services.PersonServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -44,8 +45,9 @@ public class PersonController {
     }
 
     @DeleteMapping(value = "{id}")
-    public void delete(@PathVariable("id") Long id) {
+    public ResponseEntity<?> delete(@PathVariable("id") Long id) {
         personServices.delete(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
