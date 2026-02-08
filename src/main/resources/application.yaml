@@ -1,3 +1,14 @@
 spring:
   application:
     name: spring-boot-study
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/nome_do_banco?useTimezone=true&serverTimezone=UTC
+    username: root
+    password: senha_que_foi_criada
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+      show-sql: false
