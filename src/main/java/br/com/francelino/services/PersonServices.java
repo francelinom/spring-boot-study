@@ -17,7 +17,7 @@ public class PersonServices {
     @Autowired
     private PersonRepository personRepository;
 
-    private Logger logger = LoggerFactory.getLogger(PersonServices.class.getName());
+    private final Logger logger = LoggerFactory.getLogger(PersonServices.class.getName());
 
     public Person findById(Long id){
         logger.info("Inside findById");
