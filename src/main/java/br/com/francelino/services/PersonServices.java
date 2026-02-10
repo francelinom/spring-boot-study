@@ -3,11 +3,13 @@ package br.com.francelino.services;
 import br.com.francelino.exception.ResourceNotFoundException;
 import br.com.francelino.model.Person;
 import br.com.francelino.repository.PersonRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.logging.Logger;
+
 
 @Service
 public class PersonServices {
@@ -15,7 +17,7 @@ public class PersonServices {
     @Autowired
     private PersonRepository personRepository;
 
-    private Logger logger = Logger.getLogger(PersonServices.class.getName());
+    private Logger logger = LoggerFactory.getLogger(PersonServices.class.getName());
 
     public Person findById(Long id){
         logger.info("Inside findById");
